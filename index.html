@@ -34,7 +34,27 @@
     function validateForm() {
     var validationErrors = {};
 
-   
+    function validateName(name) {
+        if (!name) {
+            validationErrors.name = "Name is required";
+        }
+    }
+
+    function validateEmail(email) {
+        if (!email) {
+            validationErrors.email = "Email is required";
+        } else if (!isValidEmail(email)) {
+            validationErrors.email = "Please enter a valid email";
+        }
+    }
+
+    function validatePassword(password) {
+        if (!password) {
+            validationErrors.password = "Password is required";
+        } else if (password.length < 6) {
+            validationErrors.password = "Password must be at least 6 characters";
+        }
+    }
 
     function validateConfirmPassword(confirmPassword, password) {
         if (!confirmPassword) {
