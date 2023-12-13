@@ -36,7 +36,24 @@
 
    
 
-    
+    function validateConfirmPassword(confirmPassword, password) {
+        if (!confirmPassword) {
+            validationErrors.confirmPassword = "Please confirm your password";
+        } else if (confirmPassword !== password) {
+            validationErrors.confirmPassword = "Passwords do not match";
+        }
+    }
+
+    function isValidEmail(email) {
+        var emailRegex = /\S+@\S+\.\S+/;
+        return emailRegex.test(email);
+    }
+
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var confirmPassword = document.getElementById('confirmPassword').value;
+
     validateName(name);
     validateEmail(email);
     validatePassword(password);
