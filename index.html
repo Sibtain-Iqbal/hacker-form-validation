@@ -24,6 +24,47 @@
     // You can add more validation rules here
 
     return true;
+
+
+
+
+
+
+
+    function validateForm() {
+    var validationErrors = {};
+
+   
+
+    
+    validateName(name);
+    validateEmail(email);
+    validatePassword(password);
+    validateConfirmPassword(confirmPassword, password);
+
+    // You can continue nesting validations or processing logic as needed...
+
+    if (Object.keys(validationErrors).length > 0) {
+        // Handle validation errors
+        console.log("Validation errors:", validationErrors);
+        return false;
+    }
+
+    // Form is valid
+    return true;
+}
+
+
+
+
+
+
+
+
+
+
+
+
   }
 </script>
 </head>
