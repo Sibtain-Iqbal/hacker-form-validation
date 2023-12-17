@@ -5,8 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Form Validation</title>
 <script>
-  
-  
+  function validateForm() {
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var confirmPassword = document.getElementById('confirmPassword').value;
+
+    if (name === '' || email === '' || password === '' || confirmPassword === '') {
+      alert('Please fill in all fields');
+      return false;
+    }
+
+    if (password !== confirmPassword) {
+      alert('Passwords do not match');
+      return false;
+    }
+
+    // You can add more validation rules here
+
+    return true;
+  }
 </script>
 </head>
 <body>
